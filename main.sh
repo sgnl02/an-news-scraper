@@ -12,6 +12,7 @@ ruby transformer.rb
 sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g' transformed.txt > news.xml
 
 ruby pretty_xml.rb
+ruby xml_to_json.rb
 
 #Remove temporary files
 rm *.txt

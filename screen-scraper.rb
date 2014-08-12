@@ -2,19 +2,22 @@ require 'nokogiri'
 require 'open-uri'
 
 open('fetched.txt', 'w') {|log|
+	i = 0
 
 	#Url without last slash
 	url = ''
-	pages = Nokogiri::HTML(open(url + '/f/0/3'), nil, 'utf-8')
-	i = 0
+
+	#Pages, preconfigured
+	pages = ['/f/0/1/page:1', '/f/0/1/page:2', '/f/0/1/page:3']
+
 
 	log.puts 'xmldoc'
 	log.puts '<news>'
 
 	#Fetch links from the pagination
-	pages.xpath('//div/span/a/@href').each do |pagination|
+	pages.each do |pagination|
 		page = Nokogiri::HTML(open(url + pagination), nil, 'utf-8')
-	
+
 		#Only fetch recent news
 		break if i > 2
 		i += 1
