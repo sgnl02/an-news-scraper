@@ -36,6 +36,15 @@ open('fetched.txt', 'w') {|log|
 				log.puts "<content>#{content.content}</content>"
 			end
 
+			#Fetch medium image-url
+			art.xpath('//*[@id="content"]/a/img/@src').each do |medImg|
+				log.puts "<medImage>#{medImg}</medImage>"
+			end
+
+			art.xpath('//*[@property="og:image"]/@content').each do |smallImg|
+				log.puts "<smallImage>#{smallImg}</smallImage>"
+			end
+
 			log.puts "<link>" + url + link + "</link></art>"
 		end
 	end
