@@ -41,10 +41,12 @@ open('fetched.txt', 'w') {|log|
 				log.puts "<medImage>#{medImg}</medImage>"
 			end
 
+			#Fetch thumbnail image-url
 			art.xpath('//*[@property="og:image"]/@content').each do |smallImg|
 				log.puts "<smallImage>#{smallImg}</smallImage>"
 			end
 
+			#Full URL
 			log.puts "<link>" + url + link + "</link></art>"
 		end
 	end
