@@ -13,7 +13,8 @@ File.open('fetched.txt', 'r') do |transform|
 		line = line.gsub(/(')/, '&apos;')
 
 		#Create XML-header
-		line = line.gsub(/xmldoc/, '<?xml version="1.0" encoding="UTF-8"?>');
+		line = line.gsub(/xmldoc/, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>')
+
 		log.puts line
 	end
 end

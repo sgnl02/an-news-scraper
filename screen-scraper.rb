@@ -30,8 +30,10 @@ open('fetched.txt', 'w') {|log|
 		
 			#Fetch content
 			art.search('div#content').each do |content|
-				log.puts "<content>#{content.content}</content></art>"
+				log.puts "<content>#{content.content}</content>"
 			end
+
+			log.puts "<link>" + url + link + "</link></art>"
 		end
 	end
 

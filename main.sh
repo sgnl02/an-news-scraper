@@ -11,5 +11,7 @@ ruby transformer.rb
 #Remove all newlines: http://stackoverflow.com/a/1252191
 sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g' transformed.txt > news.xml
 
+ruby pretty_xml.rb
+
 #Remove temporary files
 rm *.txt
