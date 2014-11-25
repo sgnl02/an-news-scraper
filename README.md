@@ -16,4 +16,5 @@ to convert the XML to JSON.
 
 ##Running script
 
+mkdir output
 ./main.sh
