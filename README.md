@@ -13,3 +13,7 @@ to convert the XML to JSON.
 
 	gem install crack
 	gem install nokogiri
+
+##Running script
+
+./main.sh
